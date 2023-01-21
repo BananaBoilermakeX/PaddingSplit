@@ -62,7 +62,7 @@ export function calculateStruct() {
     array_size = array_types.length;
     i = 0;
     while (i < array_size) {
-        if (largest_data < array_types[i].size && largest_data <= 8) {
+        if (largest_data < array_types[i].size && !array_types[i].name === "char[]") {
             largest_data = array_types[i].size;
         }
         i++;
