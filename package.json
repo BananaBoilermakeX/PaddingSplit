@@ -1,22 +1,24 @@
 {
-  "name": "frontend",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  "name": "react-beautiful-dnd-copy-and-drag-forked",
+  "version": "0.0.2",
+  "description": "An example of having multiple drop targets using react-beautiful-dnd",
+  "keywords": [],
+  "homepage": "https://codesandbox.io/s/k260nyxq9v",
+  "main": "index.js",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.3"
+    "react": "16.3.1",
+    "react-beautiful-dnd": "10.0.4",
+    "react-dom": "16.3.1",
+    "styled-components": "3.4.9",
+    "uuid": "3.3.2"
   },
   "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.1.0",
-    "vite": "^3.1.0"
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
