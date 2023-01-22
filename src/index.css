@@ -5,7 +5,9 @@
 }
 
 .vis {
-  width: 100%;
+  float: left;
+  padding-top: 80px;
+  padding-right: 10%;
 }
 
 .square {
@@ -21,7 +23,7 @@
   width: 50px;
   height: 50px;
   background-color: rgb(255, 255, 255);
-  background-image: url("../assets/single.svg");
+  background-image: url("./assets/single.svg");
   border-radius: 10px;
   display: inline-block;
   margin: 5px;
@@ -58,13 +60,16 @@ button:active {
 }
 
 .col_left {
+  min-height: 1000px;
   float: left;
   padding-left: 30%;
+  padding-right: 5%;
 }
 
 .col_right {
   float: right;
   padding-right: 30%;
+  padding-left: 5%;
 }
 
 @media screen and (max-width: 900px) {
@@ -91,6 +96,7 @@ li, p {
 
 p {
   text-align: left;
+  font-size: 20px;
 }
 
 .list_item {
