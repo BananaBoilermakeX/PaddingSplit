@@ -18,7 +18,7 @@ export function Visualizer({arr}) {
       return (
         <ul>
           {liss.map((dat, index) => {
-            return (dat.color == "image") ? <div class="square_img" style={{ backgroundColor: "white" }}><li class = "hideNum">{ind*arr[0].length + index}</li></div> : <div class="square" style={{ backgroundColor: dat.color }}><li class = "hideNum">{ind*arr[0].length + index}</li></div>
+            return (dat.color == "image") ? <div class="square_img" style={{ backgroundColor: "white" }}><li class = "hideNum">{ind*arr[0].length + index + 1}</li></div> : <div class="square" style={{ backgroundColor: dat.color }}><li class = "hideNum">{ind*arr[0].length + index + 1}</li></div>
           })}
         </ul>
       )
