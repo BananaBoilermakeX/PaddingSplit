@@ -1,6 +1,6 @@
 import {useState} from 'react';
 export function Visualizer({arr}) {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   if (!arr) {
     return;
   }
