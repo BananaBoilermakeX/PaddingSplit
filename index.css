@@ -1,0 +1,149 @@
+
+
+/* -------Hopefully these tags don't affect your work------------ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+  }  
+
+  html {
+    scroll-behavior: smooth;
+   }
+
+/* ------------------------------- */
+
+.parallax {
+    background-image: url("./pages/bkgd.png");
+
+    /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  max-height: 700px;
+}
+
+.overlay {
+    height:1000px;
+    background-color:rgb(42, 3, 83);
+    font-size:36px;
+}
+
+.name123 {
+  margin: 0;
+  padding: 0;
+
+  font-size: 4vw;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+
+  min-height: 110vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 900;
+  
+  position: relative;
+  bottom: 300px;
+}
+
+.mainLogo {
+    width: 350px;
+    height: auto;
+
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  bottom: -50px;
+}
+
+ 
+ .theDown {
+  text-decoration: none;
+  color: black;
+ } 
+ 
+ #down {
+  /* margin-top: 100%; */
+  padding-bottom: 25%;
+ } 
+
+
+ .downArrow{
+	position: absolute;
+	bottom: 10%;
+  display: flex;
+	left: 49%;
+}
+.bounce {
+	-moz-animation: bounce 3s infinite;
+	-webkit-animation: bounce 3s infinite;
+	animation: bounce 3s infinite;
+}
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+.footer {
+  padding: 7px 20px;
+  background: rgb(80, 80, 191);
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
