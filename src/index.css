@@ -1,0 +1,83 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+button {
+  background-color: #b5b5b5;
+  border: none;
+  padding-top:15px;
+  padding-bottom:15px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  width: 15%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  opacity: 0.75;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover {opacity: 1}
+
+button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(5px);
+}
+
+.col {
+  float: left;
+  width: 50%;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none;
+}
+
+.list_item {
+  padding: 10px;
+  margin: 10px;
+  width: 30%;
+  text-align: center;
+  background-color: black;
+  border-radius: 10px;
+  transition: all 0.6s;
+}
+
+.listRemove {
+  padding: 0;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  color: white;
+  opacity: 1;
+  padding-right: 25px;
+  float: right;
+}
+
+li.removedItem {
+  animation: removed-item-animation .6s cubic-bezier(.55,-0.04,.91,.94) forwards;
+}
+
+@keyframes removed-item-animation {
+  from {
+      opacity: 1;
+      transform: scale(1);
+  }
+
+  to {
+      opacity: 0;
+      transform: scale(0);
+  }
+}
