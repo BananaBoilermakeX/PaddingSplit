@@ -20,7 +20,7 @@ Main challenges where:
 4. Working and communicating as a team in a stressed environment.
 5. Everything
 ## Accomplishments that we're proud of
-Being able to create an actual project we didn't think we would be able to create in a weekend.
+We are proud to create a website that will help others in a fun and easy. We are also proud that we were able to complete this in a day which challenged our programming skills in a way we did not think this project could.
 ## What we learned
 We learned a lot more about structs and React, as well as our ability to stick together as a team and accomplish tasks efficiently
 ## What's next for PaddingSplit
