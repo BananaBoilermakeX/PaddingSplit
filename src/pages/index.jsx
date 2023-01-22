@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import many from "../../public/paddingsplit.svg"
 import { Visualizer } from './visualizer.jsx';
-import arrow from '../assets/whitedownarrwo.png';
+import arrow from '../assets/Whitedownarrwo.png';
 
 export function Index() {
   const [newArr, setNewArr] = React.useState([[]]);
