@@ -1,6 +1,5 @@
 * {
   background-color: rgb(0, 17, 33);
-  text-align: center;
 }
 .square {
   width: 50px;
@@ -14,13 +13,9 @@
 .square_img {
   width: 50px;
   height: 50px;
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(255, 255, 255);
   background-image: url("../assets/single.svg");
   border-radius: 10px;
   display: inline-block;
   margin: 5px;
-}
-
-ul {
-  padding-left: 0;
 }

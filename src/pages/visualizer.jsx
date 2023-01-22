@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./visualizer.css";
 
 export function Visualizer() {
