@@ -1,6 +1,30 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
+  background-color: rgb(0, 17, 33);
+}
+
+.vis {
+  width: 100%;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  display: inline-block;
+  margin: 5px;
+}
+
+.square_img {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  background-image: url("../assets/single.svg");
+  border-radius: 10px;
+  display: inline-block;
+  margin: 5px;
 }
 
 button {
@@ -13,7 +37,7 @@ button {
   text-decoration: none;
   display: block;
   font-size: 16px;
-  width: 15%;
+  width: 9em;
   border-radius: 15px;
   margin-bottom: 10px;
   opacity: 0.75;
@@ -24,20 +48,40 @@ button {
 button:hover {opacity: 1}
 
 button:active {
-  box-shadow: 0 5px #666;
+  box-shadow: 0 5px #FFFFFF;
   transform: translateY(5px);
 }
 
 .col {
+  text-align: center;
+  margin: 0;
+}
+
+.col_left {
   float: left;
-  width: 50%;
+  padding-left: 30%;
+}
+
+.col_right {
+  float: right;
+  padding-right: 30%;
+}
+
+@media screen and (max-width: 900px) {
+.col_right{
+  float: none;
+  padding-left: 35%;
+}
+.col_left {
+  float: none;
+}
 }
 
 ul {
   padding-left: 0;
 }
 
-li {
+li, p {
   list-style: none;
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
@@ -45,23 +89,80 @@ li {
   user-select: none;
 }
 
+p {
+  text-align: left;
+}
+
 .list_item {
-  padding: 10px;
+  background-color: red;
+  padding: 15px;
   margin: 10px;
-  width: 30%;
+  width: 7em;
   text-align: center;
-  background-color: black;
   border-radius: 10px;
-  transition: all 0.6s;
 }
 
 .listRemove {
   padding: 0;
+  margin: 0;
+  border: 0;
   width: 0;
   height: 0;
   display: inline-block;
   color: white;
   opacity: 1;
-  padding-right: 25px;
+  padding-right: 10px;
   float: right;
+}
+
+.listMove {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  color: white;
+  opacity: 1;
+  padding-left: 5px;
+  float: left;
+}
+
+.run {
+  width: 90px;
+  height: 90px;
+  margin: 50px;
+}
+
+.banana {
+  height: 60px;
+  background-color: yellow;
+}
+
+.pointer {
+  background-color: #7A50F5;
+}
+
+.long {
+  background-color: #47A5FF;
+}
+
+.double {
+  background-color: #E008BC;
+}
+
+.float {
+  background-color: #4AD45D;
+}
+
+.int {
+  background-color: #EB6F8A;
+}
+
+.short {
+  background-color: plum;
+}
+
+.char {
+  background-color: orange;
 }
