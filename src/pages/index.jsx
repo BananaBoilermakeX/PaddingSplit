@@ -261,17 +261,24 @@ export function Index() {
     })
   }
 
+  const handleReset = () => {
+    setList([]);
+    setCounter(0);
+    setData('');
+  };
+
   //FINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN  vis below
   return <body>
       <div class="parallax">
         <img class="mainLogo" src={many} alt="Banana Logo" />
         <p class="name123">Padding Split</p>
-      </div>
+        <p class = "subtext">"struct memory layout visualizer"</p>
 
       <a class="theDown" href="#down"><div class="downArrow bounce"><img width="40" height="40" alt="" src={arrow} /></div></a>
+        </div>
       <div id="down" class="overlay">
       <div class="col col_left">
-        <p>struct myStruct {"{"}</p>
+        <p class = "static">struct myStruct {"{"}</p>
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="allData">
             {(provided) => (
@@ -280,7 +287,7 @@ export function Index() {
                   <Draggable key={d.id} draggableId={d.id} index={index}>
                     {(provided) => (
                       <li id={d.id} class={`list_item ${d.name}`} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                        <span disabled class="listMove">≡</span> {d.name} <button class="listRemove" onClick={() => { deleteById(d.id); }}>x</button>
+                        <span disabled class="listMove">≡</span> <span class = "nameList">{d.name}</span> <button class= {`listRemove ${d.name}`} onClick={() => { deleteById(d.id); }}>x</button>
                         {console.log(d)}
                       </li>
                     )}
@@ -302,7 +309,7 @@ export function Index() {
         <ul>
           {dataTypes.map(d => (
             <li>
-              <button type="button" style={{ backgroundColor: d.color }} onClick={() => {
+              <button class= "typesBut" type="button" style={{ backgroundColor: d.color }} onClick={() => {
                 setCounter(counter + 1);
                 d = { name: d.name, color: d.color, size: d.size, id: d.name + counter }
                 setData(d);
@@ -311,11 +318,11 @@ export function Index() {
               </button>
             </li>
           ))}
+          <li><button class="reset" onClick={() => {handleReset();}}>⟳</button></li>
         </ul>
       </div>
 
-      <Visualizer arr={newArr} />
+      <Visualizer arr={newArr} href = "#visu"/>
       </div>
-      <footer class="footer"><p>Created by the Banana Bandits: Sean Choi, Chinmay Bansal, Jean-Pierre Ciotta, Sam Ahrens</p></footer>
       </body>
 }

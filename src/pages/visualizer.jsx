@@ -1,4 +1,6 @@
+import {useState} from 'react';
 export function Visualizer({arr}) {
+  const [counter, setCounter] = useState(0);
   if (!arr) {
     return;
   }
@@ -12,11 +14,11 @@ export function Visualizer({arr}) {
   }
 
   return <div class="vis">
-  { newArr.map(liss => {
+  { newArr.map((liss, ind) => {
       return (
         <ul>
-          {liss.map(dat => {
-            return (dat.color == "image") ? <li class="square_img" style={{ backgroundColor: "white" }}></li> : <li class="square" style={{ backgroundColor: dat.color }}></li>
+          {liss.map((dat, index) => {
+            return (dat.color == "image") ? <div class="square_img" style={{ backgroundColor: "white" }}><li class = "hideNum">{ind*arr[0].length + index}</li></div> : <div class="square" style={{ backgroundColor: dat.color }}><li class = "hideNum">{ind*arr[0].length + index}</li></div>
           })}
         </ul>
       )

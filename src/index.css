@@ -3,225 +3,6 @@
   color: white;
 }
 
-.vis {
-  float: right;
-  padding-top: 80px;
-  padding-right: 5%;
-}
-
-.square {
-  width: 50px;
-  height: 50px;
-  background-color: rgb(0, 0, 0);
-  border-radius: 10px;
-  display: inline-block;
-  margin: 5px;
-  transition: transform .4s;
-}
-
-.square_img {
-  width: 50px;
-  height: 50px;
-  background-color: rgb(255, 255, 255);
-  background-image: url("./assets/single.svg");
-  border-radius: 10px;
-  display: inline-block;
-  margin: 5px;
-  transition: transform .3s;
-}
-
-.square:hover {
-  transform: scale(1.2);
-}
-
-.square_img:hover {
-  transform: scale(1.2);
-}
-
-button {
-  background-color: #b5b5b5;
-  border: none;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 16px;
-  width: 9em;
-  border-radius: 15px;
-  margin-bottom: 10px;
-  opacity: 0.75;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 1
-}
-
-button:active {
-  box-shadow: 0 5px #FFFFFF;
-  transform: translateY(5px);
-}
-
-.col {
-  text-align: center;
-  margin: 0;
-  float: left;
-  padding-left: 6%;
-}
-
-.col_left {
-  min-height: 430px;
-}
-
-.col_right {
-  padding-right: 5%;
-}
-
-@media screen and (max-width: 1100px) {
-  .square:hover {
-    transform: scale(1.05);
-  }
-  
-  .square_img:hover {
-    transform: scale(1.05);
-  }
-
-  .col {
-    float: none;
-    padding-left: 43%;
-  }
-
-  .vis {
-    width: 100%;
-    text-align: center;
-    padding-right: 0;
-  }
-
-  .square {
-    height: 45px;
-    width: 45px;
-    margin: 2px;
-  }
-
-  .square_img {
-    height: 45px;
-    width: 45px;
-    margin: 2px;
-  }
-}
-
-ul {
-  padding-left: 0;
-}
-
-li,
-p {
-  list-style: none;
-  -webkit-user-select: none;
-  /* Safari */
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* IE10+/Edge */
-  user-select: none;
-}
-
-p {
-  text-align: left;
-  font-size: 20px;
-}
-
-.list_item {
-  background-color: red;
-  padding: 15px;
-  margin: 10px;
-  width: 7em;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.listRemove {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  width: 0;
-  height: 0;
-  display: inline-block;
-  color: white;
-  opacity: 1;
-  padding-right: 10px;
-  float: right;
-}
-
-.listMove {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  width: 0;
-  height: 0;
-  display: inline-block;
-  color: white;
-  opacity: 1;
-  padding-left: 5px;
-  float: left;
-}
-
-.run {
-  width: 90px;
-  height: 90px;
-  margin: 50px;
-  margin-left: 28px;
-}
-
-.banana {
-  height: 60px;
-  background-color: yellow;
-}
-
-.pointer {
-  background-color: #7A50F5;
-}
-
-.long {
-  background-color: #47A5FF;
-}
-
-.double {
-  background-color: #E008BC;
-}
-
-.float {
-  background-color: #4AD45D;
-}
-
-.int {
-  background-color: #EB6F8A;
-}
-
-.short {
-  background-color: plum;
-}
-
-.char {
-  background-color: orange;
-}
-
-/* -------Hopefully these tags don't affect your work------------ */
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 /* ------------------------------- */
 
 .parallax {
@@ -238,39 +19,49 @@ html {
   background-size: cover;
 
   max-height: 800px;
-
-
 }
 
 .overlay {
   width: 100%;
   background-color: rgb(42, 3, 83);
-  min-height: 800px;
+  min-height: 100%;
   padding-top: 60px;
   position: absolute;
 }
 
-#down {}
-
 .name123 {
   margin: 0;
-  padding: 0;
+  padding-top: 45px;
+  border: 0;
 
-  font-size: 4vw;
+  font-size: 80px;
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
-
-  min-height: 110vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-family: 'Work Sans', sans-serif;
   font-weight: 900;
+}
 
-  position: relative;
-  bottom: 300px;
+.subtext {
+  margin: 0;
+  padding-top: 25px;
+  padding-bottom: 50px;
+
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 450;
 }
 
 .mainLogo {
@@ -281,7 +72,7 @@ html {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  bottom: -50px;
+  bottom: -30px;
 }
 
 
@@ -292,10 +83,11 @@ html {
 
 
 .downArrow {
-  position: absolute;
-  bottom: 10%;
-  display: flex;
+  width: 100%;
   left: 49%;
+  position: relative;
+  bottom: -30px;
+  background-size: 0px;
 }
 
 .bounce {
@@ -389,4 +181,391 @@ html {
 
 .footer p {
   font-size: 14px;
+}
+
+/* MY CSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS*/
+
+.vis {
+  float: right;
+  padding-right: 5%;
+  padding-bottom: 100px;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  display: inline-block;
+  margin: 5px;
+  transition: transform .3s;
+}
+
+.square_img {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  background-image: url("./assets/single.svg");
+  border-radius: 10px;
+  display: inline-block;
+  margin: 5px;
+  transition: transform .3s;
+}
+
+.square:hover {
+  transform: scale(1.2);
+  transition: all .3s;
+}
+
+.square_img:hover {
+  transform: scale(1.2);
+  background-image: none;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
+  transition: .3s;
+}
+
+button {
+  background-color: #b5b5b5;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  width: 9em;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  opacity: 0.75;
+  transition: 0.3s;
+  cursor: pointer;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+}
+
+button:hover {
+  opacity: 1
+}
+
+button:active {
+  box-shadow: 0 5px #FFFFFF;
+  transform: translateY(5px);
+}
+
+.col {
+  text-align: center;
+  margin: 0;
+  float: left;
+  padding-left: 6%;
+}
+
+.col_left {
+  min-height: 430px;
+}
+
+.col_right {
+  padding-right: 50px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li, p {
+  list-style: none;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+}
+
+p {
+  text-align: left;
+  font-size: 20px;
+}
+
+.list_item {
+  background-color: red;
+  padding: 15px;
+  margin: 10px;
+  width: 7em;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.listRemove {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 0px;
+  display: inline-block;
+  color: white;
+  opacity: 1;
+  padding-right: 10px;
+  float: right;
+}
+
+.nameList {
+  padding-left: 7px;
+  text-align: center;
+}
+
+.listMove {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 0;
+  display: inline-block;
+  color: white;
+  opacity: 1;
+  padding-left: 5px;
+  float: left;
+}
+
+.run {
+  width: 90px;
+  height: 90px;
+  margin: 50px;
+  margin-left: 28px;
+}
+
+.banana {
+  height: 60px;
+  background-color: yellow;
+}
+
+.pointer {
+  background-color: #7A50F5;
+}
+
+.long {
+  background-color: #47A5FF;
+}
+
+.double {
+  background-color: #E008BC;
+}
+
+.float {
+  background-color: #4AD45D;
+}
+
+.int {
+  background-color: #EB6F8A;
+}
+
+.short {
+  background-color: plum;
+}
+
+.char {
+  background-color: orange;
+}
+
+/* -------Hopefully these tags don't affect your work------------ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+}
+
+.hideNum {
+  padding-top: 15px;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  text-align: center;
+}
+
+.hideNum:hover {
+  padding-top: 15px;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  transition: all .3s;
+}
+
+.square_img .hideNum {
+  color: rgb(70, 70, 70);
+}
+
+.reset {
+  display: inline-block;
+  width: 30px;
+  height: 0px;
+  border-radius: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: transparent;
+  font-size: 40px;
+}
+
+.reset:active {
+  box-shadow: 0 0px #FFFFFF;
+  transform: translateY(5px);
+}
+
+.static {
+  display: inline;
+}
+
+@media screen and (min-width: 751px) and (max-width: 1050px) {
+  .col_right {
+    float: right;
+    padding-left: 0;
+  }
+
+  .square {
+    height: 35px;
+    width: 35px;
+    margin: 2px;
+  }
+
+  .square_img {
+    height: 35px;
+    width: 35px;
+    margin: 2px;
+  }
+
+  .hideNum {
+    font-size: small;
+    padding-top: 10px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+  }
+  
+  .hideNum:hover {
+    font-size: small;
+    padding-top: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .vis {
+    float: none;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .mainLogo {
+    width: 220px; 
+    padding-top: 50px;
+  }
+  .name123 {
+    font-size: 50px;
+  }
+
+  .subtext {
+    font-size: small;
+  }
+
+  .downArrow {
+    bottom: -20px;
+    left: 44%;
+  }
+
+  .square:hover {
+    transform: scale(1.05);
+
+  }
+  
+  .square_img:hover {
+    transform: scale(1.05);
+  }
+
+  .col {
+    display: inline-block;
+    float: left;
+  }
+
+  .col_left {
+    padding-left: 5%;
+  }
+
+  .col_right {
+    padding-right: 5%;
+    float:right;
+  }
+
+  .col p {
+    font-size: medium;
+  }
+
+  .run {
+    height: 65px;
+    width: 65px;
+    margin-left: 50px;
+  }
+
+  .banana {
+    height: 40px;
+  }
+  
+  .typesBut {
+    width: 100px;
+  }
+
+  .vis {
+    width:100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    padding: 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .square {
+    height: 35px;
+    width: 35px;
+    margin: 2px;
+  }
+
+  .square_img {
+    height: 35px;
+    width: 35px;
+    margin: 2px;
+  }
+
+  .hideNum {
+    font-size: small;
+    padding-top: 10px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+  }
+  
+  .hideNum:hover {
+    font-size: small;
+    padding-top: 10px;
+    width: 35px;
+    height: 35px;
+  }
 }
