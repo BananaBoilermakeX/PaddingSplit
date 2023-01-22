@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import many from "../../public/paddingsplit.svg"
 import { Visualizer } from './visualizer.jsx';
+import arrow from '../assets/whitedownarrwo.png';
 
 export function Index() {
   const [newArr, setNewArr] = React.useState([[]]);
@@ -23,7 +24,7 @@ export function Index() {
       }
       i++;
     }
-    
+
     let output = new Array(array_types.length);
     //let output = [[]][[]];
     for (let i = 0; i < array_types.length; i++) {
@@ -189,7 +190,7 @@ export function Index() {
   // LOGIC FOR STRUCC
   const [list, setList] = React.useState([]);
   const [data, setData] = React.useState('');
-  let counter = 0;
+  const [counter, setCounter] = React.useState(0);
 
   const dataTypes = [{
     name: "pointer",
@@ -261,51 +262,60 @@ export function Index() {
   }
 
   //FINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN  vis below
-  return <div>
-    <div class="col col_left">
-      <p>struct myStruct {"{"}</p>
-      <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable droppableId="allData">
-          {(provided) => (
-            <ul {...provided.droppableProps} ref={provided.innerRef}>
-              {list.map((d, index) => (
-                <Draggable key={d.id} draggableId={d.id} index={index}>
-                  {(provided) => (
-                    <li id={d.id} class={`list_item ${d.name}`} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                      <span disabled class="listMove">≡</span> {d.name} <button class="listRemove" onClick={() => { deleteById(d.id); }}>x</button>
-                      {console.log(d)}
-                    </li>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </ul>
-          )}
-        </Droppable>
-      </DragDropContext>
-      <p>{"};"}</p>
-      <button class="run" style={{ backgroundColor: "yellow" }} onClick={() => {
-        setNewArr(calculatePadding(list));
-        //setNewArr([[dataTypes[0],dataTypes[0]], [dataTypes[1], dataTypes[1]]]);
-      }}><img class="banana" src={many}></img></button>
-    </div>
+  return <body>
+      <div class="parallax">
+        <img class="mainLogo" src={many} alt="Banana Logo" />
+        <p class="name123">Padding Split</p>
+      </div>
 
-    <div class="col col_right">
-      <ul>
-        {dataTypes.map(d => (
-          <li>
-            <button type="button" style={{ backgroundColor: d.color }} onClick={() => {
-              counter++;
-              d = { name: d.name, color: d.color, size: d.size, id: d.name + counter }
-              setData(d);
-            }}>
-              {d.name}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <a class="theDown" href="#down"><div class="downArrow bounce"><img width="40" height="40" alt="" src={arrow} /></div></a>
+      <div id="down" class="overlay">
+      <div class="col col_left">
+        <p>struct myStruct {"{"}</p>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="allData">
+            {(provided) => (
+              <ul {...provided.droppableProps} ref={provided.innerRef}>
+                {list.map((d, index) => (
+                  <Draggable key={d.id} draggableId={d.id} index={index}>
+                    {(provided) => (
+                      <li id={d.id} class={`list_item ${d.name}`} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                        <span disabled class="listMove">≡</span> {d.name} <button class="listRemove" onClick={() => { deleteById(d.id); }}>x</button>
+                        {console.log(d)}
+                      </li>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </ul>
+            )}
+          </Droppable>
+        </DragDropContext>
+        <p>{"};"}</p>
+        <button class="run" style={{ backgroundColor: "yellow" }} onClick={() => {
+          setNewArr(calculatePadding(list));
+          //setNewArr([[dataTypes[0],dataTypes[0]], [dataTypes[1], dataTypes[1]]]);
+        }}><img class="banana" src={many}></img></button>
+      </div>
 
-    <Visualizer arr = {newArr}/>
-  </div>
+      <div class="col col_right">
+        <ul>
+          {dataTypes.map(d => (
+            <li>
+              <button type="button" style={{ backgroundColor: d.color }} onClick={() => {
+                setCounter(counter + 1);
+                d = { name: d.name, color: d.color, size: d.size, id: d.name + counter }
+                setData(d);
+              }}>
+                {d.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <Visualizer arr={newArr} />
+      </div>
+      <footer class="footer"><p>Created by the Banana Bandits: Sean Choi, Chinmay Bansal, Jean-Pierre Ciotta, Sam Ahrens</p></footer>
+      </body>
 }

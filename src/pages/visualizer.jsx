@@ -1,4 +1,8 @@
 export function Visualizer({arr}) {
+  if (!arr) {
+    return;
+  }
+  
   let newArr = [];
   for (let j = 0; j < arr.length; j++) {
     if (!arr[j]) {
