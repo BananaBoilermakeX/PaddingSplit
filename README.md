@@ -1,6 +1,6 @@
 # PaddingSplit
 
-Contributors
+##Contributors
 Jean-Pierre Ciotta
 Sean Choi
 Sam Ahrens
@@ -9,7 +9,7 @@ Chinmay Bansal
 ## Inspiration
 We all took Programming in C (CS240) and structs were one of the main topics taught. We learned about their usefulness in programming which included setting pointers to them, pointers inside of them, and their **memory layout** in a physical computer. Our team realized while learning the memory layout there were no online visual tools that showed the individual variables and their positions in the memory. Another concept that was hard to learn was the use of padding and when the compiler uses it. Because of this, we all committed this weekend to the challenge and worked as a team.
 ## What it does
-This website creates a C data type struct visualizer that accurately shows the memory map layout of a struct.  
+This website creates a C data type struct visualizer that accurately shows the memory map layout of a struct. Bananas shows the padding.
 ## How we built it
 We built it using React, JavaScript, HTML, CSS
 ## Challenges we ran into
