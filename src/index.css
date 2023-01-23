@@ -364,11 +364,12 @@ p {
 /* -------Hopefully these tags don't affect your work------------ */
 
 html, body {
-
   margin: 0;
   padding: 0;
+}
 
-  overflow-x: hidden;
+html {
+  overflow-x:hidden;
 }
 
 .hideNum {
