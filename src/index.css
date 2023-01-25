@@ -361,6 +361,17 @@ p {
   background-color: orange;
 }
 
+.string {
+  background-color: #A3243F;
+}
+
+input {
+  width: 35px;
+  border: 0px;
+  background-color: #A3243F;
+  font-size: 15px;
+}
+
 /* -------Hopefully these tags don't affect your work------------ */
 
 html, body {
@@ -370,6 +381,7 @@ html, body {
 
 html {
   overflow-x:hidden;
+  scroll-behavior: smooth;
 }
 
 .hideNum {
@@ -504,10 +516,6 @@ html {
 
   .banana {
     height: 40px;
-  }
-  
-  .typesBut {
-    width: 100px;
   }
 
   .vis {

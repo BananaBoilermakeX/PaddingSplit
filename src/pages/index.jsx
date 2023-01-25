@@ -7,7 +7,14 @@ import arrow from '../assets/Whitedownarrwo.png';
 
 export function Index() {
   const [newArr, setNewArr] = React.useState([[]]);
-  function calculatePadding(array_types) {
+
+  function calculatePadding(a_t) {
+
+    let array_types = Array.from(a_t);
+    Array.prototype.insert = function (index, ...items) {
+      this.splice(index, 0, ...items);
+    };
+
     let pad = {
       name: "padding",
       size: "1",
@@ -15,6 +22,18 @@ export function Index() {
     };
 
     let largest_data = 0;
+
+    for (let s = 0; s < array_types.length; s++) {
+      if (array_types[s].butCol == "string") {
+        let temp = Object.assign({}, array_types[s]);
+        let howMany = temp.size;
+        temp.size = 1;
+        array_types.splice(s, 1);
+        for(let c = 0; c < howMany; c++) {
+          array_types.insert(s, temp);
+        }
+      }
+    }
 
     let array_size = array_types.length;
     let i = 0;
@@ -43,7 +62,6 @@ export function Index() {
         break;
       }
     }
-    // console.log("isString: " + isString);
     if (array_types.length == 1) {
 
       for (let i = 0; i < array_types[0].size; i++) {
@@ -52,7 +70,6 @@ export function Index() {
         col_num++;
         total_bytes++;
       }
-      // console.log("");
 
       return output;
     }
@@ -61,14 +78,12 @@ export function Index() {
 
 
       if (col_num == 0) {
-        // console.log("is herre i:" + i);
         for (let j = 0; j < array_types[i].size; j++) {
           // process.stdout.write(array_types[i].name + "r:"+ row_num+ " c:" + col_num);
 
           output[row_num][col_num] = array_types[i];
           col_num++;
           total_bytes++;
-          //console.log("\nrow:" + row_num + "col:" + col_num);
         }
 
         if (col_num == largest_data) {
@@ -121,17 +136,14 @@ export function Index() {
 
           for (let j = 0; j < temp; j++) {
             //from index.js add paddng
-            //comment for sean to fix.
-            // console.log("col_numpoee:" + col_num);
-            // output[row_num] = {};
-            // output[col_num] = {};
+
             output[row_num][col_num] = pad;
             // process.stdout.write(" Pad2 "+ "r:"+ row_num+ "c:" + col_num);
             col_num++;
             total_bytes++;
 
           }
-          //console.log("rpad:"+ row_num+ "c:" + col_num);
+
           if (col_num == largest_data) {
             col_num = 0;
             row_num++;
@@ -194,6 +206,7 @@ export function Index() {
 
   const dataTypes = [{
     name: "pointer",
+    butCol: "pointer",
     size: "8",
     color: "#7A50F5",
     id: "0"
@@ -201,36 +214,42 @@ export function Index() {
 
   {
     name: "long",
+    butCol: "long",
     size: "8",
     color: "#47A5FF",
     id: "0"
   },
   {
     name: "double",
+    butCol: "double",
     size: "8",
     color: "#E008BC",
     id: "0"
   },
   {
     name: "float",
+    butCol: "float",
     size: "4",
     color: "#4AD45D",
     id: "0"
   },
   {
     name: "int",
+    butCol: "int",
     size: "4",
     color: "#EB6F8A",
     id: "0"
   },
   {
     name: "short",
+    butCol: "short",
     size: "2",
     color: "plum",
     id: "0"
   },
   {
     name: "char",
+    butCol: "char",
     size: "1",
     color: "orange",
     id: "0"
@@ -240,6 +259,7 @@ export function Index() {
     if (!data) {
       return;
     }
+
     const newList = list.concat(data);
     setList(newList);
   }, [data]);
@@ -269,16 +289,16 @@ export function Index() {
 
   //FINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN  vis below
   return <body>
-      <div class="parallax">
-        <img class="mainLogo" src={many} alt="Banana Logo" />
-        <p class="name123">Padding Split</p>
-        <p class = "subtext">"struct memory layout visualizer"</p>
+    <div class="parallax">
+      <img class="mainLogo" src={many} alt="Banana Logo" />
+      <p class="name123">Padding Split</p>
+      <p class="subtext">"struct memory layout visualizer"</p>
 
       <a class="theDown" href="#down"><div class="downArrow bounce"><img width="40" height="40" alt="" src={arrow} /></div></a>
-        </div>
-      <div id="down" class="overlay">
+    </div>
+    <div id="down" class="overlay">
       <div class="col col_left">
-        <p class = "static">struct myStruct {"{"}</p>
+        <p class="static">struct myStruct {"{"}</p>
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="allData">
             {(provided) => (
@@ -286,9 +306,8 @@ export function Index() {
                 {list.map((d, index) => (
                   <Draggable key={d.id} draggableId={d.id} index={index}>
                     {(provided) => (
-                      <li id={d.id} class={`list_item ${d.name}`} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                        <span disabled class="listMove">≡</span> <span class = "nameList">{d.name}</span> <button class= {`listRemove ${d.name}`} onClick={() => { deleteById(d.id); }}>x</button>
-                        {console.log(d)}
+                      <li id={d.id} class={`list_item ${d.butCol}`} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                        <span disabled class="listMove">≡</span> <span class="nameList">{d.name}</span> <button class={`listRemove ${d.butCol}`} onClick={() => { deleteById(d.id); }}>x</button>
                       </li>
                     )}
                   </Draggable>
@@ -300,8 +319,8 @@ export function Index() {
         </DragDropContext>
         <p>{"};"}</p>
         <button class="run" style={{ backgroundColor: "yellow" }} onClick={() => {
+          console.log(list);
           setNewArr(calculatePadding(list));
-          //setNewArr([[dataTypes[0],dataTypes[0]], [dataTypes[1], dataTypes[1]]]);
         }}><img class="banana" src={many}></img></button>
       </div>
 
@@ -309,20 +328,33 @@ export function Index() {
         <ul>
           {dataTypes.map(d => (
             <li>
-              <button class= "typesBut" type="button" style={{ backgroundColor: d.color }} onClick={() => {
+              <button class="typesBut" type="button" style={{ backgroundColor: d.color }} onClick={() => {
                 setCounter(counter + 1);
-                d = { name: d.name, color: d.color, size: d.size, id: d.name + counter }
+                d = { name: d.name, butCol: d.butCol, color: d.color, size: d.size, id: d.name + counter };
                 setData(d);
               }}>
                 {d.name}
               </button>
             </li>
           ))}
-          <li><button class="reset" onClick={() => {handleReset();}}>⟳</button></li>
+          <li>
+            <button class="typesBut" type="button" style={{ backgroundColor: "#A3243F" }} onClick={() => {
+              let sSize = document.getElementById("stringSize").value;
+              if (!sSize) {
+                return;
+              }
+              setCounter(counter + 1);
+              let string = { name: "char [" + sSize + "]", butCol: "string", color: "#A3243F", size: sSize, id: dataTypes[6].name + counter + "string" };
+              setData(string);
+            }}>
+              {dataTypes[6].name + " ["} <input id="stringSize" type="number" min="1" max="99" onClick={(e) => { e.stopPropagation(); }}></input> {"]"}
+            </button>
+          </li>
+          <li><button class="reset" onClick={() => { handleReset(); }}>⟳</button></li>
         </ul>
       </div>
 
-      <Visualizer arr={newArr} href = "#visu"/>
-      </div>
-      </body>
+      <Visualizer arr={newArr} href="#visu" />
+    </div>
+  </body>
 }
