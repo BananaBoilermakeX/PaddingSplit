@@ -3,7 +3,7 @@ Link: (https://www.paddingsplit.tech)
 ## Contributors
 Jean-Pierre Ciotta
 Sean Choi
-Sam Ahrens
+Sam Ahrens 
 Chinmay Bansal
 
 ## Inspiration
